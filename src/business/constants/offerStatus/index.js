@@ -1,0 +1,6 @@
+export const INVALID = 'Invalid offer, type a value like: \"100\" ou \"99,99\"'
+export const LESS_OR_EQUAL_THAN_OFFERS = 'Offer less than the highest offer ever made'
+export const LESS_THAN_INITIAL_VALUE = 'Offer less than the initial amount'
+export const VALID = 'Valid Offer'
+export const NOT_SENDED = 'Offer not sent, try again'
+export const SENDED = 'Offer sent successfully'
