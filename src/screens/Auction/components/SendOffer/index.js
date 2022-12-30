@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native'
-import { BlurView } from 'expo-blur'
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { SENDED } from '../../../../business/constants/offerStatus'
 
@@ -29,7 +28,7 @@ export default function SendOffer({ sendOffer, color }) {
     setSending(false)
   }
 
-  return <BlurView intensity={Platform.OS === 'ios' ? 10 : 100} style={styles.background} tint="light">
+  return <View style={styles.background}>
     {!!error && <Text style={styles.error}>{error}</Text>}
     {!!success && <Text style={styles.success}>{success}</Text>}
     <TextInput 
@@ -41,12 +40,13 @@ export default function SendOffer({ sendOffer, color }) {
       keyboardType="decimal-pad"
     />
     <TouchableOpacity 
+      accessibilityHint='Send offer'
       onPress={validPost}
       disabled={sending}
       style={styles.btn}>
       <FontAwesome5 name="check" size={24} color="#14181B" />
     </TouchableOpacity>
-  </BlurView>
+  </View>
 }
 
 const functionStyles = (color, error) => StyleSheet.create({
