@@ -1,8 +1,8 @@
-import auction from '../../services/api/auction'
+import auction from '../../services/auctionApi'
 
 export async function getAuctions() {
   try {
-    const response = await auction.get(`/leiloes`);
+    const response = await auction.get(`/auctions`);
     return response.data;
   } catch (error) {
     return [];
@@ -11,7 +11,7 @@ export async function getAuctions() {
 
 export async function getAuction(id) {
   try {
-    const response = await auction.get(`/leiloes/${id}`);
+    const response = await auction.get(`/auctions/${id}`);
     return response.data;
   } catch(error) {
     return {};
